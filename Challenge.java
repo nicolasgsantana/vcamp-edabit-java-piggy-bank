@@ -2,22 +2,24 @@ public class Challenge {
 	
   public static int NumberOfDays(int cost, int savings, int start) {
 	  
-		int days= 0;
-		int weekDay = 0;
+		int daysToBuyCar = 0;
+		int weekday = 0;
 		
 		while(cost >= savings){
 			
-			savings += start + weekDay;
+			// cada loop do while representa um dia
+			savings += start + weekday;
 			
-			weekDay += 1;
-			days += 1;
+			weekday += 1;
+			daysToBuyCar += 1;
 			
-			if(weekDay > 6){
+			// a cada 7 dias + 1 é adicionado ao valor inicial
+			if(weekday > 6){
 				start += 1;
-				weekDay = 0;
+				weekday = 0;
 			}
 			
 		}
-		return days;
+		return daysToBuyCar;
 	}
 }
